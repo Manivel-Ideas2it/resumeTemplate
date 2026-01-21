@@ -1,0 +1,125 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
+    background-color: #faf9f8;
+    font-family: "Segoe UI",
+    "Segoe UI Web (West European)",
+    Segoe,
+    -apple-system,
+    system-ui,
+    Roboto,
+    "Helvetica Neue",
+    Tahoma,
+    Helvetica,
+    Arial,
+    sans-serif;
+    font-size: 12px;
+}
+
+.todo-app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: #2564cf;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+}
+
+.sideBar {
+    display: block;
+    background-color: #ffffff;
+    width: 300px;
+}
+
+.todo-launch-container{
+    display: flex;
+    align-items: center;
+}
+
+.icons {
+    overflow: hidden;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons:hover {
+    background-color: #005A9E;
+    cursor: pointer;
+}
+
+.material-symbols-outlined  {
+    font-weight: 300 !important;
+}
+
+a{
+    color: #fff;
+    text-decoration: transparent;
+    font-size: 16px;
+    padding: 0px 10px;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.settings-container {
+    display: flex;
+}
+
+.profile-name {
+    font-size: 12px;
+    padding: 8px 7px;
+    border: 1px solid;
+    border-radius: 50%;
+}
+.searchBox:focus-visible {
+    outline: none;
+}
+
+.search-container {
+    background: #fff;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    border-radius: 5px;
+}
+
+.searchBox {
+    border: none;
+    width:80%;
+}
+
+.searchBox::placeholder {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    /* color:;   */
+}
+
+.main-container {
+    display: flex;
+    flex:1;
+    /* height: 100%; */
+}
+
+.side-menu {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start
+}
+
