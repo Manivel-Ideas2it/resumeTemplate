@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
     <body>
-        <div class="todo-app">
+        <section class="todo-app">
             <header class="header">
                 <div class="todo-launch-container">
                     <div class="app-icon-container icons">
@@ -37,22 +37,77 @@
             <main class="main-container">
                 <aside class="sideBar" id="sideBar">
                     <nav>
-                        <div>
-                            <button onclick="handleSideBar()">
+                        <div class="side-menu-hamburger-icon">
+                            <button onclick="handleSideBar()" class="side-menu-btn">
                                 <span class="material-symbols-outlined">menu</span>
                             </button>
                         </div>
-                        <div class="side-menu">My day</div>
-                        <div class="side-menu">Important</div>
-                        <div class="side-menu">Planned</div>
-                        <div class="side-menu">Assigned to me</div>
-                        <div class="side-menu">Flagged email</div>
-                        <div class="side-menu">Task</div>
+                        <div class="side-menu-button-container">
+                            <ul class="side-menu-button-list">
+                                <li>
+                                    <button class="side-menu-btn active">
+                                        <span class="material-symbols-outlined side-menu-btn-icon">light_mode</span> 
+                                        <span>My day</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="side-menu-btn">
+                                        <span class="material-symbols-outlined side-menu-btn-icon">kid_star</span>
+                                        <span>Important</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="side-menu-btn">
+                                        <span class="material-symbols-outlined side-menu-btn-icon">calendar_month</span>
+                                        <span>Planned</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="side-menu-btn">
+                                        <span class="material-symbols-outlined side-menu-btn-icon">person</span>
+                                        <span>Assigned to me</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="side-menu-btn">
+                                        <span class="material-symbols-outlined side-menu-btn-icon">flag_2</span>
+                                        <span>Flagged email</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="side-menu-btn">
+                                        <span class="material-symbols-outlined side-menu-btn-icon">home</span>
+                                        <span>Tasks</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="new-menu-conatiner">
+                            <div class="sidBar-new-menu">
+                                <div class="add-new-menu">
+                                    <span class="material-symbols-outlined">add</span>
+                                    <input type="text" name="newMenu" placeholder="New list" class="new-menu-list-input"/>
+                                </div>
+                                <button class="side-menu-btn add-new-menu-btn">
+                                    <span class="material-symbols-outlined add-new-menu-icon">list_alt_add</span>
+                                </button>
+                            </div>
+                        </div>
                     </nav>
                 </aside>
-            <section class="content"></section>
+                <section class="main-content-area">
+                    <section class="toolbar-container">toolbar
+                    </section>
+                    <section class="add-task-container">
+                        <span class="material-symbols-outlined">add</span>
+                        <input type="text" id="addTask" name="add-task" class="add-task-input" placeholder="Add a task" onchange="handleChange(event)"/>
+                    </section>
+                    <section class="task-list" id="task-list">
+                    </section>
+                </section>
             </main>
-        </div>
+        </section>
           <script src="todo.js"></script>
     </body>
 </html>
