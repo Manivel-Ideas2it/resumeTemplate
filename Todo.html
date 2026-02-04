@@ -11,23 +11,23 @@
             <header class="header">
                 <div class="todo-launch-container">
                     <div class="app-icon-container icons">
-                    <span class="material-symbols-outlined"  title="App launcher">apps</span>
+                    <span class="material-symbols-outlined icon"  title="App launcher">apps</span>
                     </div>
                     <a href="#">To Do</a>
                 </div>
                 <div class="search-container">
-                    <span class="material-symbols-outlined">search</span>
+                    <span class="material-symbols-outlined icon">search</span>
                     <input type="search" name="search" class="searchBox" placeholder="Search" />
                 </div>
                 <div class="settings-container">
                     <div class="setting-icon-container icons">
-                        <span class="material-symbols-outlined">settings</span>
+                        <span class="material-symbols-outlined icon">settings</span>
                     </div>
                     <div class="question-icon-container icons">
-                        <span class="material-symbols-outlined">question_mark</span>
+                        <span class="material-symbols-outlined icon">question_mark</span>
                     </div>
                     <div class="announcement-icon-container icons">
-                        <span class="material-symbols-outlined">campaign</span>
+                        <span class="material-symbols-outlined icon">campaign</span>
                     </div>
                     <div class="profile-icon-container icons">
                         <span class="profile-name">MS</span>
@@ -39,44 +39,44 @@
                     <nav>
                         <div class="side-menu-hamburger-icon">
                             <button onclick="handleSideBar()" class="side-menu-btn">
-                                <span class="material-symbols-outlined">menu</span>
+                                <span class="material-symbols-outlined icon">menu</span>
                             </button>
                         </div>
                         <div class="side-menu-button-container">
                             <ul class="side-menu-button-list">
                                 <li>
-                                    <button class="side-menu-btn active">
-                                        <span class="material-symbols-outlined side-menu-btn-icon">light_mode</span> 
+                                    <button class="side-menu-btn active" data-list-id="My Day">
+                                        <span class="material-symbols-outlined side-menu-btn-icon icon">light_mode</span> 
                                         <span>My day</span>
                                     </button>
                                 </li>
                                 <li>
-                                    <button class="side-menu-btn">
-                                        <span class="material-symbols-outlined side-menu-btn-icon">kid_star</span>
+                                    <button class="side-menu-btn" data-list-id="Important">
+                                        <span class="material-symbols-outlined side-menu-btn-icon icon">kid_star</span>
                                         <span>Important</span>
                                     </button>
                                 </li>
                                 <li>
-                                    <button class="side-menu-btn">
-                                        <span class="material-symbols-outlined side-menu-btn-icon">calendar_month</span>
+                                    <button class="side-menu-btn" data-list-id="Planned">
+                                        <span class="material-symbols-outlined side-menu-btn-icon icon">calendar_month</span>
                                         <span>Planned</span>
                                     </button>
                                 </li>
                                 <li>
-                                    <button class="side-menu-btn">
-                                        <span class="material-symbols-outlined side-menu-btn-icon">person</span>
+                                    <button class="side-menu-btn" data-list-id="Assigned To Me">
+                                        <span class="material-symbols-outlined side-menu-btn-icon icon">person</span>
                                         <span>Assigned to me</span>
                                     </button>
                                 </li>
                                 <li>
-                                    <button class="side-menu-btn">
-                                        <span class="material-symbols-outlined side-menu-btn-icon">flag_2</span>
+                                    <button class="side-menu-btn" data-list-id="Flagged Email">
+                                        <span class="material-symbols-outlined side-menu-btn-icon icon">flag_2</span>
                                         <span>Flagged email</span>
                                     </button>
                                 </li>
                                 <li>
-                                    <button class="side-menu-btn">
-                                        <span class="material-symbols-outlined side-menu-btn-icon">home</span>
+                                    <button class="side-menu-btn" data-list-id="Tasks">
+                                        <span class="material-symbols-outlined side-menu-btn-icon icon">home</span>
                                         <span>Tasks</span>
                                     </button>
                                 </li>
@@ -84,28 +84,104 @@
                         </div>
                         <div class="divider"></div>
                         <div class="new-menu-conatiner">
+                            <div class="new-side-menu-list-container">
+                                <ul class="side-menu-button-list" id="side-menu-list-container"></ul>
+                            </div>
                             <div class="sidBar-new-menu">
                                 <div class="add-new-menu">
-                                    <span class="material-symbols-outlined">add</span>
-                                    <input type="text" name="newMenu" placeholder="New list" class="new-menu-list-input"/>
+                                    <span class="material-symbols-outlined icon">add</span>
+                                    <input type="text" name="newMenu" placeholder="New list" id="addMenuList" class="new-menu-list-input"/>
                                 </div>
                                 <button class="side-menu-btn add-new-menu-btn">
-                                    <span class="material-symbols-outlined add-new-menu-icon">list_alt_add</span>
+                                    <span class="material-symbols-outlined add-new-menu-icon icon">list_alt_add</span>
                                 </button>
                             </div>
                         </div>
                     </nav>
                 </aside>
                 <section class="main-content-area">
-                    <section class="toolbar-container">toolbar
+                    <section class="toolbar-container" id="listActiveTitle">
+                        <span>My Day</span>
                     </section>
                     <section class="add-task-container">
-                        <span class="material-symbols-outlined">add</span>
-                        <input type="text" id="addTask" name="add-task" class="add-task-input" placeholder="Add a task" onchange="handleChange(event)"/>
+                        <span class="material-symbols-outlined add-task-icon icon">add</span>
+                        <input type="text" id="addTask" name="add-task" class="add-task-input" placeholder="Add a task" onhange="handleChange(event)"/>
                     </section>
-                    <section class="task-list" id="task-list">
+                    <section class="task-list-container-section" id="task-list">
+                        <div class="task-list-header-container" id="task-list-header-container">
+                            <span class="material-symbols-outlined icon task-status-icon">radio_button_unchecked</span>
+                            <div class="task-container-title">Title</div>
+                            <div class="task-container-due-date icon">Due Date</div>
+                            <div class="task-container-importance icon">Importance</div>
+                        </div>
+                        <!-- <div class="task-item-container" id="task-item-container"> -->
+                            <!-- <span class="material-symbols-outlined icon task-status-icon">radio_button_unchecked</span>
+                            <div class="task-item-title">
+                                <span class="task-title"></span>
+                                <input class="task-edit-input" type="text" name="task-edit-input"/>
+                                <span class="material-symbols-outlined info-icon icon">info</span>
+                            </div>
+                            <div class="task-item-due-date icon">
+                                <span class="material-symbols-outlined icon">calendar_month</span>
+                            </div>
+                            <div class="task-item-importance icon">
+                                <span class="material-symbols-outlined icon">kid_star</span>
+                            </div> -->
+                        <!-- </div> -->
                     </section>
                 </section>
+                <aside class="task-details-panel" id="task-details-panel">
+                    <div class="task-details-header">
+                        <span class="material-symbols-outlined task-details-status icon">radio_button_unchecked</span>
+                        <span class="task-details-title" id="task-details-title"></span>
+                        <span class="material-symbols-outlined task-details-star icon">star_outline</span>
+                    </div>
+                    <div class="task-details-actions">
+                        <button class="task-action">
+                            <span class="material-symbols-outlined icon">add</span>
+                            <span>Add step</span>
+                        </button>
+
+                        <button class="task-action">
+                            <span class="material-symbols-outlined icon">light_mode</span>
+                               <span>Added to My Day</span>
+                        </button>
+
+                        <button class="task-action">
+                            <span class="material-symbols-outlined icon">notifications</span>
+                            <span>Remind me</span>
+                        </button>
+
+                        <button class="task-action">
+                            <span class="material-symbols-outlined icon">calendar_month</span>
+                            <span>Add due date</span>
+                        </button>
+
+                        <button class="task-action">
+                            <span class="material-symbols-outlined icon">repeat</span>
+                            <span>Repeat</span>
+                        </button>
+
+                        <button class="task-action">
+                            <span class="material-symbols-outlined icon">sell</span>
+                            <span>Pick a category</span>
+                        </button>
+
+                        <button class="task-action">
+                            <span class="material-symbols-outlined icon">attach_file</span>
+                            <span>Add file</span>
+                        </button>
+                    </div>
+                    <textarea class="task-details-note" name="notes" placeholder="Add note"></textarea>
+                    <div class="task-details-footer">
+                        <button class="task-details-close" id="task-details-close">
+                        <span class="material-symbols-outlined icon">right_panel_close</span>
+                    </button>
+                        <button class="task-details-delete" id="task-details-delete">
+                        <span class="material-symbols-outlined icon">delete</span>
+                        </button>
+                    </div>
+                </aside>
             </main>
         </section>
           <script src="todo.js"></script>
