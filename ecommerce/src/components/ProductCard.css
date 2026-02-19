@@ -1,0 +1,17 @@
+.product-card {
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px;
+    padding: 20px;
+    background:#353333;
+}
+.product-card-link {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    text-align: center;
+}

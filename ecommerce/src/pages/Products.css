@@ -1,0 +1,40 @@
+.products-container{
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch; */
+}
+
+.products-container h2 {
+    margin: 0px;
+}
+.products-search {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.products-categories button {
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin: 0px 0.5rem;
+}
+
+.active {
+    background:  #e94560;
+    color: #fff;
+    border-color: #e94560;
+}
+
+.products-container .products-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
